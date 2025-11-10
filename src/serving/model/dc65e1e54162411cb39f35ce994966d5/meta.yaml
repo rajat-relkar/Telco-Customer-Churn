@@ -1,0 +1,14 @@
+artifact_uri: file:///home/rajat/Telco/mlruns/496842192136234666/dc65e1e54162411cb39f35ce994966d5/artifacts
+end_time: 1762781716976
+entry_point_name: ''
+experiment_id: '496842192136234666'
+lifecycle_stage: active
+run_id: dc65e1e54162411cb39f35ce994966d5
+run_name: useful-wren-913
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762781716920
+status: 4
+tags: []
+user_id: rajat

@@ -1,0 +1,14 @@
+artifact_uri: file:///home/rajat/Telco/mlruns/496842192136234666/f774c18b88d9444fa32dee5d323b38ec/artifacts
+end_time: 1762780984124
+entry_point_name: ''
+experiment_id: '496842192136234666'
+lifecycle_stage: active
+run_id: f774c18b88d9444fa32dee5d323b38ec
+run_name: overjoyed-duck-480
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762780984068
+status: 4
+tags: []
+user_id: rajat
