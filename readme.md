@@ -1,17 +1,17 @@
-# 📊 Telco Customer Churn Prediction
+# Telco Customer Churn Prediction
 
 Predict customer churn for a telecom company with a fully operational MLOps pipeline — from data prep and model training to deployment on AWS ECS with REST API and Gradio UI.
 
 ---
 
-## 🧭 Purpose
+## Purpose
 
 This project builds and ships a **complete machine learning solution** for predicting telecom customer churn.  
 It covers everything — data validation, feature engineering, model training, experiment tracking, containerization, CI/CD, and cloud deployment.
 
 ---
 
-## 💡 Problem Solved & Benefits
+## Problem Solved & Benefits
 
 | Challenge | Solution | Benefit |
 |------------|-----------|----------|
@@ -22,7 +22,7 @@ It covers everything — data validation, feature engineering, model training, e
 
 ---
 
-## 🏗️ What I Built
+## What I Built
 
 - **Data & Modeling:** Feature engineering + XGBoost classifier  
 - **Model Tracking:** MLflow for runs, metrics, and artifacts  
@@ -34,9 +34,9 @@ It covers everything — data validation, feature engineering, model training, e
 
 ---
 
-## ⚙️ Architecture Overview
+## Architecture Overview
 
-### 🧩 ML Pipeline Flow
+### ML Pipeline Flow
 
 #### **1. Training Pipeline** (`scripts/run_pipeline.py`)
 ```
@@ -70,7 +70,7 @@ mlflow ui --backend-store-uri file:./mlruns
 
 ---
 
-## 🧠 Feature Engineering Consistency
+## Feature Engineering Consistency
 
 | Type | Logic |
 |------|-------|
@@ -81,7 +81,7 @@ mlflow ui --backend-store-uri file:./mlruns
 
 ---
 
-## 🚀 Model Serving
+## Model Serving
 
 | Aspect | Details |
 |--------|----------|
@@ -97,7 +97,7 @@ curl -X POST "http://<alb-dns>/predict" -H "Content-Type: application/json" -d '
 
 ---
 
-## 🔍 Data Validation
+## Data Validation
 
 - **Tool:** Great Expectations  
 - **Script:** `src/utils/validate_data.py`  
@@ -109,7 +109,7 @@ curl -X POST "http://<alb-dns>/predict" -H "Content-Type: application/json" -d '
 
 ---
 
-## 🐳 Docker Containerization
+## Docker Containerization
 
 | Setting | Value |
 |----------|--------|
@@ -121,7 +121,7 @@ curl -X POST "http://<alb-dns>/predict" -H "Content-Type: application/json" -d '
 
 ---
 
-## ⚡ CI/CD Pipeline
+## CI/CD Pipeline
 
 - Trigger: Push to `main`
 - Workflow:  
@@ -134,7 +134,7 @@ curl -X POST "http://<alb-dns>/predict" -H "Content-Type: application/json" -d '
 
 ---
 
-## ☁️ AWS Deployment Overview
+## AWS Deployment Overview
 
 | Component | Purpose |
 |------------|----------|
@@ -150,7 +150,7 @@ Push to main → GitHub Actions → Docker Hub → ECS Update → ALB Health Che
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Telco-Customer-Churn/
@@ -179,32 +179,7 @@ Telco-Customer-Churn/
 
 ---
 
-## 📈 Results (Extracted from `EDA.ipynb`)
-
-### ROC AUC
-- (source) - If business wants a ranking of churn risk → use ROC-AUC or PR-AUC to evaluate the model.- (source) from sklearn.metrics import classification_report, precision_score, recall_score, f1_score, roc_auc_score
-    auc = roc_auc_score(y_test, proba)
-    mlflow.log_metric("roc_auc", auc)### PRECISION
-- (source) - If retention campaigns are expensive → balance precision and recall using F1 score or a precision-recall trade-off.- (output)               precision    recall  f1-score   support- (output)               precision    recall  f1-score   support- (source) - The cost is a small drop in precision — meaning more loyal customers will be flagged as churn risks — but if retention offers are low-cost, this is fine.- (output)               precision    recall  f1-score   support### RECALL
-- (source) In churn prediction, recall (and metrics derived from it, like F1) is usually the most important — here’s why:- (source) - If retention campaigns are cheap → prioritize recall (catch every possible churner).
-- If retention campaigns are expensive → balance precision and recall using F1 score or a precision-recall trade-off.
-- High Recall: A high recall score indicates the model is good at finding most of the positive cases and has a low number of false negatives.- (source) THRESHOLD = 0.25  # lower than 0.5 to boost recall (see next to choose the right value)- (output)               precision    recall  f1-score   support- (output)               precision    recall  f1-score   support### F1
-- (source) In churn prediction, recall (and metrics derived from it, like F1) is usually the most important — here’s why:- (source) - If retention campaigns are expensive → balance precision and recall using F1 score or a precision-recall trade-off.- (output)               precision    recall  f1-score   support- (source) from sklearn.metrics import precision_score, recall_score, f1_score
-    f1 = f1_score(y_test, preds, pos_label=1)
-    print(f"{thresh:<8}{prec:<8.3f}{rec:<8.3f}{f1:<8.3f}")- (output)               precision    recall  f1-score   support### ACCURACY
-- (output)     accuracy                          0.739      1409- (output)     accuracy                          0.715      1409- (output)     accuracy                          0.704      1409- (output)     accuracy                          0.633      1409- (output)     accuracy                          0.633      1409### CLASSIFICATION REPORT
-- (source) from sklearn.metrics import classification_report- (source) from sklearn.metrics import classification_report
-print(classification_report(y_test, y_pred, digits=3))- (source) from sklearn.metrics import classification_report
-# Classification report
-print(classification_report(y_test, y_pred, digits=3))- (source) from sklearn.metrics import classification_report
-# Classification report
-print(classification_report(y_test, y_pred, digits=3))- (source) from sklearn.metrics import classification_report
-# Classification report
-print(classification_report(y_test, y_pred, digits=3))
-
----
-
-## 🧰 Tech Stack
+## Tech Stack
 
 **ML & Data:** XGBoost, pandas, Great Expectations, MLflow  
 **Backend:** FastAPI, Gradio, Pydantic  
@@ -213,7 +188,7 @@ print(classification_report(y_test, y_pred, digits=3))
 
 ---
 
-## 🧑‍💻 Development Notes
+## Development Notes
 
 - No formal test suite; use scripts in `scripts/test_*.py`
 - Model training artifacts must match inference columns
@@ -222,16 +197,7 @@ print(classification_report(y_test, y_pred, digits=3))
 
 ---
 
-## 📈 Future Improvements
-
-- Add unit tests and data drift checks (Evidently AI)
-- Automate ECS service update via CI/CD
-- Enable remote MLflow tracking server
-- Add Streamlit dashboard for analytics
-
----
-
-## 🏁 Getting Started
+## Getting Started
 
 ```bash
 # Clone repo
@@ -247,24 +213,8 @@ python scripts/run_pipeline.py
 # Start API
 uvicorn src.app.main:app --reload
 
-# Access UI
-http://localhost:8000/ui
 ```
 
 ---
 
-**Author:** Rajat Relkar  
-**License:** MIT  
-**Keywords:** `mlops`, `fastapi`, `mlflow`, `aws`, `docker`, `xgboost`, `great-expectations`
 
-
-## 📷 Notebook Plots
-
-The following images were extracted from `EDA.ipynb` outputs and saved in `/mnt/data/notebook_images/`. Click to view full-size.
-
-<p align="center">
-<a href="sandbox://mnt/data/notebook_images/022_figure_1.png">
-<img src="sandbox://mnt/data/notebook_images/022_figure_1.png" alt="figure" style="max-width:320px; width:48%; height:auto; margin:4px;"/>
-</a>
-<br><em>Figure extracted from notebook output.</em>
-</p>
