@@ -247,6 +247,8 @@ python scripts/run_pipeline.py
 # Start API
 uvicorn src.app.main:app --reload
 
+# Access UI
+http://localhost:8000/ui
 ```
 
 ---
@@ -254,3 +256,15 @@ uvicorn src.app.main:app --reload
 **Author:** Rajat Relkar  
 **License:** MIT  
 **Keywords:** `mlops`, `fastapi`, `mlflow`, `aws`, `docker`, `xgboost`, `great-expectations`
+
+
+## 📷 Notebook Plots
+
+The following images were extracted from `EDA.ipynb` outputs and saved in `/mnt/data/notebook_images/`. Click to view full-size.
+
+<p align="center">
+<a href="sandbox://mnt/data/notebook_images/022_figure_1.png">
+<img src="sandbox://mnt/data/notebook_images/022_figure_1.png" alt="figure" style="max-width:320px; width:48%; height:auto; margin:4px;"/>
+</a>
+<br><em>Figure extracted from notebook output.</em>
+</p>
