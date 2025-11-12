@@ -54,7 +54,7 @@ Feature transformations mirror training logic to ensure consistency.
 
 ---
 
-## 🧪 MLflow Integration
+## MLflow Integration
 
 | Type | Example |
 |------|----------|
@@ -216,5 +216,6 @@ uvicorn src.app.main:app --reload
 ```
 
 ---
+
 
 
